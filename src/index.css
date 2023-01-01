@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply flex justify-center items-center min-h-screen bg-[#071111] font-rublic;
+  }
+  .box:hover .content {
+    @apply scale-100 bottom-9;
+  }
+  .icon {
+		@apply relative text-[rgba(255,255,255,0.5)] bg-[rgba(0,0,0,0.2)] w-8 h-8 flex justify-center items-center rounded-md transition-all duration-500;
+  }
+  .icon:hover {
+		@apply text-[rgba(255,255,255,1)]
+  }
+  .anim {
+		animation: animate 4s linear infinite;
+  }
+  .anim2 {
+		animation: animate 4s linear infinite;
+		animation-delay: -2s;
+  }
+  .circle {
+		@apply relative w-40 h-40 flex justify-center items-center;
+  }
+  .svg {
+		@apply relative w-40 h-40 rotate-[270deg];
+  }
+  circle {
+		@apply w-full h-full fill-transparent stroke-[#282828] translate-x-2 translate-y-2;
+  }
+  circle {
+	stroke-linecap: round;
+  }
+  .time div {
+		@apply absolute text-center text-white text-2xl;
+  }
+  .time div span {
+		@apply absolute translate-x-[-50%] translate-y-[-10px] text-base tracking-widest uppercase;
+  }
+  .dots {
+		@apply absolute w-full h-full rounded-[50%] flex justify-center items-start z-50
+  }
+}
+
+@keyframes animate
+{
+	0%
+	{
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform: rotate(360deg);
+	}
+}
