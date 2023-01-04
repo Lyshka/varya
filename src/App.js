@@ -1,4 +1,4 @@
-import {Image, Spinner, Timer} from "./components"
+import {Cubes, Image, Navigat, Spinner, Timer} from "./components"
 
 const App = () => {
 	return (
@@ -8,7 +8,11 @@ const App = () => {
 				<Timer />
 			</div> */}
 
-			<Spinner />
+			{/* <Spinner /> */}
+
+			{/* <Cubes /> */}
+
+			<Navigat />
 		</>
 	)
 }
