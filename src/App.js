@@ -1,16 +1,14 @@
-import {Cubes, Image, Navigat, Spinner, Timer} from "./components"
+import {Cubes, Image, Navigat, Spinner, Time, Home} from "./components"
+import {Routes, Route} from "react-router-dom"
 
 const App = () => {
 	return (
 		<>
-			{/* <div className="flex flex-col h-screen gap-8">
-				<Image />
-				<Timer />
-			</div> */}
-
-			{/* <Spinner /> */}
-
-			{/* <Cubes /> */}
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/spinner" element={<Spinner />} />
+				<Route path="/cube" element={<Cubes />} />
+			</Routes>
 
 			<Navigat />
 		</>

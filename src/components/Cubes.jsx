@@ -1,6 +1,6 @@
 const Cubes = () => {
     return (
-        <div className="relative top-[-80px] skew-y-[-20deg] anim-cube">
+        <div className="relative flex justify-center items-center w-full h-[200px] top-[-80px] skew-y-[-20deg] anim-cube">
             <div className="z-[2] cubes">
                 <div style={{
                     "--x": -1,

@@ -1,40 +1,82 @@
 import {Googlehome, Spinrilla, Nintendogamecube, Photobucket} from "@icons-pack/react-simple-icons"
+import {useState} from "react"
+import {Link} from "react-router-dom"
 
 const Navigat = () => {
-  return (
-    <div className="relative w-[700px] h-24 flex justify-center items-center bg-[#333] rounded-xl">
-        <ul className="relative flex w-[500px] justify-between items-center list">
-            <li className="active">
-                <button>
-                    <span className="icon2"><Googlehome /></span>
-                    <span className="text">Home</span>
-                </button>
-            </li>
+	const [activeHome, setActiveHome] = useState(false)
+	const [activeSpin, setActiveSpin] = useState(false)
+	const [activeCube, setActiveCube] = useState(false)
+	const [activePhoto, setActivePhoto] = useState(false)
 
-            <li>
-                <button>
-                    <span className="icon2"><Spinrilla /></span>
-                    <span className="text">Spin</span>
-                </button>
-            </li>
+	const handleActiveHome = () => {
+		setActiveHome(true)
+		setActiveSpin(false)
+		setActiveCube(false)
+		setActivePhoto(false)
+	}
 
-            <li>
-                <button>
-                    <span className="icon2"><Nintendogamecube /></span>
-                    <span className="text">Cube</span>
-                </button>
-            </li>
+	const handleActiveSpin = () => {
+		setActiveHome(false)
+		setActiveSpin(true)
+		setActiveCube(false)
+		setActivePhoto(false)
+	}
 
-            <li>
-                <button>
-                    <span className="icon2"><Photobucket /></span>
-                    <span className="text">Photos</span>
-                </button>
-            </li>
+	const handleActiveCube = () => {
+		setActiveHome(false)
+		setActiveSpin(false)
+		setActiveCube(true)
+		setActivePhoto(false)
+	}
 
-            <div className="absolute w-20 h-20 flex justify-center items-center before:content-[''] before:absolute before:bottom-[20px] before:w-4/5 before:h-[14px] before:bg-[#29fd53] before:rounded-xl"></div>
-        </ul>
-    </div>
-  )
+	const handleActivePhoto = () => {
+		setActiveHome(false)
+		setActiveSpin(false)
+		setActiveCube(false)
+		setActivePhoto(true)
+	}
+
+	return (
+		<div className="bottom-0 left-0 w-full flex justify-center items-center nohide z-[90] fixed">
+			<div className="relative w-[700px] h-16 flex justify-center items-center bg-[#333] rounded-xl hide opacity-0 transition-all duration-700">
+				<ul className="relative flex w-[500px] justify-between items-center list">
+					<Link to={"/"} onClick={handleActiveHome}>
+						<li className={`${activeCube || activePhoto || activeSpin || "active"} ${activeHome ? "active" : ""}`}>
+							<button>
+								<span className="icon2"><Googlehome /></span>
+								<span className="text">Home</span>
+							</button>
+						</li>
+					</Link>
+
+					<Link to={"/spinner"} onClick={handleActiveSpin}>
+						<li className={`${activeSpin ? "active" : ""}`}>
+							<button>
+								<span className="icon2"><Spinrilla /></span>
+								<span className="text">Spin</span>
+							</button>
+						</li>
+					</Link>
+
+					<Link to={"/cube"} onClick={handleActiveCube}>
+						<li className={`${activeCube ? "active" : ""}`}>
+							<button>
+								<span className="icon2"><Nintendogamecube /></span>
+								<span className="text">Cube</span>
+							</button>
+						</li>
+					</Link>
+
+					<li className={`${activePhoto ? "active" : ""}`} onClick={handleActivePhoto}>
+						<button>
+							<span className="icon2"><Photobucket /></span>
+							<span className="text">Photos</span>
+						</button>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	)
 }
 export default Navigat

@@ -12,77 +12,79 @@
     @apply scale-100 bottom-9;
   }
   .icon {
-		@apply relative text-[rgba(255,255,255,0.5)] bg-[rgba(0,0,0,0.2)] w-8 h-8 flex justify-center items-center rounded-md transition-all duration-500;
+    @apply relative text-[rgba(255,255,255,0.5)] bg-[rgba(0,0,0,0.2)] w-8 h-8 flex justify-center items-center rounded-md transition-all duration-500;
   }
   .icon:hover {
-		@apply text-[rgba(255,255,255,1)]
+    @apply text-[rgba(255,255,255,1)];
   }
   .anim {
-		animation: animate 4s linear infinite;
+    animation: animate 4s linear infinite;
   }
   .anim2 {
-		animation: animate 4s linear infinite;
-		animation-delay: -2s;
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
   }
   .circle {
-		@apply relative w-40 h-40 flex justify-center items-center;
+    @apply relative w-40 h-40 flex justify-center items-center;
   }
   .svg {
-		@apply relative w-40 h-40 rotate-[270deg];
+    @apply relative w-40 h-40 rotate-[270deg];
   }
   circle {
-		@apply w-full h-full fill-transparent stroke-[#282828] translate-x-2 translate-y-2;
+    @apply w-full h-full fill-transparent stroke-[#282828] translate-x-2 translate-y-2;
   }
   circle {
-	stroke-linecap: round;
+    stroke-linecap: round;
   }
   .time div {
-		@apply absolute text-center text-white text-2xl;
+    @apply absolute text-center text-white text-2xl;
   }
   .time div span {
-		@apply absolute translate-x-[-50%] translate-y-[-10px] text-base tracking-widest uppercase;
+    @apply absolute translate-x-[-50%] translate-y-[-10px] text-base tracking-widest uppercase;
   }
   .dots {
-		@apply absolute w-full h-full rounded-[50%] flex justify-center items-start z-50
+    @apply absolute w-full h-full rounded-[50%] flex justify-center items-start z-50;
   }
   .clip:before {
-		clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
+    clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
   }
   .number {
-		position: absolute;
-		width: 50%;
-		height: 50%;
-		background: var(--clr);
-		transform-origin: bottom right;
-		transform: rotate(calc(45deg * var(--i)));
-		clip-path: polygon(0 0, 59% 0, 100% 100%, 0 59%);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		user-select: none;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: var(--clr);
+    transform-origin: bottom right;
+    transform: rotate(calc(45deg * var(--i)));
+    clip-path: polygon(0 0, 59% 0, 100% 100%, 0 59%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
   }
   .number span {
-		@apply relative rotate-45 text-3xl text-white;
+    @apply relative rotate-45 text-3xl text-white;
   }
   .number span {
-		text-shadow: 3px 5px 2px rgba(0,0,0,0.15);
+    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
   }
   .trans {
-		transform: rotate(var(--rot));
-		transition: transform 5s ease-in-out;
+    transform: rotate(var(--rot));
+    transition: transform 5s ease-in-out;
   }
   .shad {
-		box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05), 25px 35px 20px rgba(0,0,0,0.05), 25px 30px 30px rgba(0,0,0,0.05), inset -20px -20px 25px rgba(255,255,255,0.9);
-		border-radius: 73% 27% 59% 41% / 57% 59% 41% 43%;
-		transition: 0.5s ease-in-out;
+    box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
+      25px 35px 20px rgba(0, 0, 0, 0.05), 25px 30px 30px rgba(0, 0, 0, 0.05),
+      inset -20px -20px 25px rgba(255, 255, 255, 0.9);
+    border-radius: 73% 27% 59% 41% / 57% 59% 41% 43%;
+    transition: 0.5s ease-in-out;
   }
   .shad:hover {
-		border-radius: 23%;
+    border-radius: 23%;
   }
   .btn {
-		background: var(--clr);
-		text-shadow: 0 2px 2px rgba(0,0,0,0.25);
-		transition: 0.5s;
+    background: var(--clr);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
   }
   .cube {
     @apply relative inline-block w-24 h-24 bg-[#dcdcdc];
@@ -98,7 +100,7 @@
     filter: drop-shadow(0 0 50px #ef4149);
   }
   .cube::before {
-    content: "";
+    content: '';
     position: absolute;
     left: -70px;
     width: 70px;
@@ -110,10 +112,10 @@
   }
   .cube:hover::before {
     transition: 0s;
-    background: #f75d64
+    background: #f75d64;
   }
   .cube::after {
-    content: "";
+    content: '';
     position: absolute;
     top: -70px;
     left: 0;
@@ -126,7 +128,7 @@
   }
   .cube:hover::after {
     transition: 0s;
-    background: #f75d64
+    background: #f75d64;
   }
   .cubes div {
     position: absolute;
@@ -152,38 +154,50 @@
   .icon2 {
     @apply relative block text-3xl text-[rgba(255,255,255,0.5)];
   }
+  .list li:hover .icon2 {
+	 @apply text-[rgba(255,255,255,1)]
+  }
   .list li.active button .icon2 {
     @apply -translate-y-4 text-[#29fd53];
   }
   .text {
-    @apply absolute text-xs text-white tracking-wider uppercase translate-y-0;
+    @apply absolute text-xs text-white tracking-wider uppercase translate-y-0 z-10;
     transition: 0.5s;
   }
   .list li.active button .text {
-    @apply translate-y-[13px] opacity-100
+    @apply translate-y-[13px] opacity-100;
+  }
+  .indicator {
+    @apply absolute w-20 h-20 flex justify-center items-center before:content-[''] before:absolute before:bottom-[18px] left-[-27px] before:w-4/5 before:h-[18px] before:bg-[#29fd53] before:rounded-xl;
+  }
+  .list a li:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(158px * 1));
+  }
+  .list a li:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(158px * 2));
+  }
+  .list li:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(158px * 3));
+  }
+  .nohide:hover .hide{
+	 @apply opacity-100;
   }
 }
 
-@keyframes animate
-{
-	0%
-	{
-		transform: rotate(0deg);
-	}
-	100%
-	{
-		transform: rotate(360deg);
-	}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes animate2
-{
-	0%
-	{
-		filter: hue-rotate(0deg);
-	}
-	100%
-	{
-		filter: hue-rotate(360deg);
-	}
+@keyframes animate2 {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }

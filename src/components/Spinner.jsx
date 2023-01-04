@@ -39,32 +39,10 @@ const Spinner = () => {
 				<div className="border-[10px] absolute w-[600px] h-[500px] bg-purple-600 rounded-t-3xl z-50 flex justify-center items-center flex-col px-10 gap-y-16">
 					<div className="flex gap-x-10">
 						<input type="text" className="w-full h-32 text-center outline-none text-3xl" id="input1" placeholder="Имя игрока 1" onChange={handlePlayer1} />
-						<div className="flex flex-col justify-center items-center gap-y-10">
-							<div className="flex justify-center items-center gap-x-3">
-								<input type="checkbox" className="w-8 h-8" placeholder="м" />
-								<span>М</span>
-							</div>
-
-							<div className="flex justify-center items-center gap-x-3">
-								<input type="checkbox" className="w-8 h-8" placeholder="м" />
-								<span>Ж</span>
-							</div>
-						</div>
 					</div>
 
 					<div className="flex gap-x-10">
 						<input type="text" className="w-full h-32 text-center outline-none text-3xl" id="input1" placeholder="Имя игрока 2" onChange={handlePlayer2} />
-						<div className="flex flex-col justify-center items-center gap-y-10">
-							<div className="flex justify-center items-center gap-x-3">
-								<input type="checkbox" className="w-8 h-8" placeholder="м" />
-								<span>М</span>
-							</div>
-
-							<div className="flex justify-center items-center gap-x-3">
-								<input type="checkbox" className="w-8 h-8" placeholder="м" />
-								<span>Ж</span>
-							</div>
-						</div>
 					</div>
 
 					<button className="text-4xl" onClick={handlePLay}>Играть</button>
