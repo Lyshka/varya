@@ -44,7 +44,7 @@ const Timer = () => {
 
 	return (
 		<>
-			<div className="flex gap-8 flex-wrap">
+			<div className="flex gap-8 flex-wrap justify-center items-center">
 				<div className="circle time">
 					<div className="dots before:content-[''] before:absolute before:top-[-3px] before:w-6 before:h-6 before:bg-[#ffffff] before:rounded-[50%] before:shadow-[0_0_20px,0_0_60px]" style={{rotate: `${day * 0.986}deg`}}>
 

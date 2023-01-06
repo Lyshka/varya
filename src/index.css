@@ -87,7 +87,7 @@
     transition: 0.5s;
   }
   .cube {
-    @apply relative inline-block w-24 h-24 bg-[#dcdcdc];
+    @apply relative inline-block lg:w-24 lg:h-24 w-12 h-12 bg-[#dcdcdc];
   }
   .cube {
     z-index: calc(1 * var(--i));
@@ -102,8 +102,7 @@
   .cube::before {
     content: '';
     position: absolute;
-    left: -70px;
-    width: 70px;
+    @apply lg:left-[-70px] lg:w-[70px] left-[-35px] w-[35px];
     height: 100%;
     background: #fff;
     transform-origin: right;
@@ -117,10 +116,9 @@
   .cube::after {
     content: '';
     position: absolute;
-    top: -70px;
     left: 0;
     width: 100%;
-    height: 70px;
+    @apply lg:top-[-70px] lg:h-[70px] top-[-35px] h-[35px];
     background: #f2f2f2;
     transform-origin: bottom;
     transform: skewX(45deg);
@@ -134,16 +132,23 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    @apply lg:gap-[30px] gap-[10px];
     translate: calc(-120px * var(--x)) calc(-110px * var(--y));
   }
-  .cubes:nth-child(2) {
-    z-index: 1;
-    translate: -110px -110px;
+  .minicubes div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    @apply lg:gap-[30px] gap-[10px];
+    translate: calc(-60px * var(--x)) calc(-55px * var(--y));
   }
-  .cubes:nth-child(3) {
+  .cubes2:nth-child(2) {
+    z-index: 1;
+    @apply lg:translate-x-[-110px] lg:translate-y-[-110px] translate-x-[-40px] translate-y-[-40px];
+  }
+  .cubes3:nth-child(3) {
     z-index: 3;
-    translate: 110px 110px;
+    @apply lg:translate-x-[110px] lg:translate-y-[110px] translate-x-[40px] translate-y-[40px];
   }
   .anim-cube {
     animation: animate2 5s linear infinite;
@@ -182,6 +187,19 @@
   .nohide:hover .hide{
 	 @apply opacity-100;
   }
+  .grad {
+    background: linear-gradient(transparent, #fff);
+    animation: animate3 5s linear infinite;
+  }
+  .grad:nth-child(3n+1) {
+    background: linear-gradient(transparent, #0ff)
+  }
+  .grad:nth-child(3n+2) {
+    background: linear-gradient(transparent, #0f0)
+  }
+  .grad:nth-child(3n+3) {
+    background: linear-gradient(transparent, #f00)
+  }
 }
 
 @keyframes animate {
@@ -199,5 +217,14 @@
   }
   100% {
     filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes animate3 {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(calc(100vh + 200px));
   }
 }

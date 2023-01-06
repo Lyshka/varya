@@ -36,19 +36,17 @@ const Spinner = () => {
 	return (
 		<div className="w-screen h-screen flex justify-center items-center">
 			{contine && (
-				<div className="border-[10px] absolute w-[600px] h-[500px] bg-purple-600 rounded-t-3xl z-50 flex justify-center items-center flex-col px-10 gap-y-16">
-					<div className="flex gap-x-10">
-						<input type="text" className="w-full h-32 text-center outline-none text-3xl" id="input1" placeholder="Имя игрока 1" onChange={handlePlayer1} />
-					</div>
+				<div className="border-[10px] absolute lg:w-[600px] lg:h-[500px] w-full h-[300px] bg-purple-600 rounded-t-3xl z-50 flex justify-center items-center flex-col px-10 gap-y-10">
+					<div className="flex flex-col gap-y-10 relative">
+						<input type="text" className="w-full lg:h-32 h-16 text-center outline-none text-3xl" id="input1" placeholder="Имя игрока 1" onChange={handlePlayer1} />
 
-					<div className="flex gap-x-10">
-						<input type="text" className="w-full h-32 text-center outline-none text-3xl" id="input1" placeholder="Имя игрока 2" onChange={handlePlayer2} />
+						<input type="text" className="w-full lg:h-32 h-16 text-center outline-none text-3xl" id="input1" placeholder="Имя игрока 2" onChange={handlePlayer2} />
 					</div>
 
 					<button className="text-4xl" onClick={handlePLay}>Играть</button>
 				</div>
 			)}
-			<div className={`flex justify-center items-center relative w-96 h-96 z-0 `}>
+			<div className={`${contine ? "hidden" : "flex"} justify-center items-center relative w-96 h-96 z-0`}>
 				<div className="absolute w-24 h-24 bg-white rounded-full z-10 flex justify-center items-center uppercase text-sm text-[#333] tracking-widest border-[4px] border-[rgba(0,0,0,0.75)] cursor-pointer select-none before:content-[''] before:absolute before:top-[-28px] before:w-7 before:h-[30px] before:bg-white clip" onClick={handleSpin}>Крутить</div>
 
 				<div className={`absolute top-0 left-0 w-full h-full bg-[#071111] rounded-full overflow-hidden shadow-[0_0_0_5px_#333,0_0_0_15px_#fff,0_0_0_18px_#111] trans`} style={{ "--rot": `${rotate}deg` }}>

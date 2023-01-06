@@ -2,7 +2,7 @@ import {Image, Timer} from "./"
 
 const Home = () => {
 	return (
-		<div className="flex flex-col gap-8">
+		<div className="flex flex-col items-center justify-center gap-8">
 			<Image />
 			<Timer />
 		</div>
