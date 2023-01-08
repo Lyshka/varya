@@ -1,10 +1,10 @@
-import {Cubes, Navigat, Spinner, Home, BackGround} from "./components"
+import {Cubes, Navigat, Spinner, Home, BackGround, Setting, Likes} from "./components"
 import {Routes, Route} from "react-router-dom"
 
 const App = () => {
 	return (
 		<>
-			<Routes>
+			{/* <Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/spinner" element={<Spinner />} />
 				<Route path="/cube" element={<Cubes />} />
@@ -13,6 +13,10 @@ const App = () => {
 			<Navigat />
 
 			<BackGround />
+
+			<Setting /> */}
+
+			<Likes />
 		</>
 	)
 }
